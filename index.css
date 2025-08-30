@@ -6,6 +6,10 @@
 
 body {
   height: 99.9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .img {
@@ -24,51 +28,12 @@ body {
     bottom: -10px;
     right: -10px;
     left: -10px;
-    border-left: 2.5px dashed #007bff;
-    border-right: 2.5px solid #007bff;
-    border-bottom: 2.5px solid #007bff;
-    border-top: 2.5px dashed #007bff;
+    border-left: 2.5px dashed rgb(38, 104, 38);
+    border-right: 2.5px solid rgb(7, 105, 7);
+    border-bottom: 2.5px solid rgb(7, 105, 7);
+    border-top: 2.5px dashed rgb(7, 105, 7);
     border-radius: 50%;
     animation: rotate 5s linear infinite;
-}
-
-.con {
-  margin: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-.go-down {
-  width: calc(100% / 5);
-  background: rgb(75, 3, 75);
-  height: 100%;
-  bottom: 100%;
-  position: relative;
-  display: inline-block;
-  animation: goDown 2.5s ease-in;
-}
-
-.go-down:first-of-type {
-  animation-delay: 5s;
-}
-
-.go-down:last-of-type {
-  animation-delay: 1s;
-}
-
-.go-down:nth-of-type(2) {
-  animation-delay: 4s;
-}
-
-.go-down:nth-of-type(3) {
-  animation-delay: 3s;
-}
-
-.go-down:nth-of-type(4) {
-  animation-delay: 2s;
 }
 
 @keyframes rotate {
@@ -79,18 +44,83 @@ body {
     transform: rotate(360deg);
   }
 }
-@keyframes goDown {
-  from {
-    bottom: 100%;
-  }
-  to {
-    bottom: 0;
-  }
-}
 
 img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+  height: 100%;
+  background: rgb(59, 1, 59);
+}
+
+.main-cont {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 70px;
+}
+
+.text {
+  color:white;
+}
+
+.text h1 {
+  font-size: 3.5rem;
+  text-shadow: 0px 0px 10px #fff;
+  transition: text-shadow 0.3s ease;
+}
+
+.text h1:hover {
+  text-shadow: 0px 0px 15px #fff;
+  cursor: pointer;
+}
+
+.text p {
+  font-size: 1.4rem;
+  margin: 15px 0 0 40px;
+}
+
+.cta {
+  width: 20%;
+  height: 50px;
+  text-align: center;
+  border: 0;
+  border-radius:10px ;
+  background: #4CBB17;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  top: -14%;
+  left: -7.25%;
+  bottom: 0;
+  right: 0;
+  border-radius: 10px;
+  border: 0;
+  transition: width 0.3s, height 0.3s ease;
+}
+
+.cta:hover::before {
+  width: 110%;
+  height: 110%;
+  border: 2.5px solid green;
 }
